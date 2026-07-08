@@ -57,7 +57,7 @@ colours = np.array([
 ], dtype=np.uint8)
 
 # default moore neighbourhood
-neighborhood = np.array([
+neighbourhood = np.array([
     [1, 1, 1],
     [1, 1, 1],
     [1, 1, 1]
