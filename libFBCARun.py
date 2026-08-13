@@ -157,7 +157,7 @@ def sanityCheck2(s = S, sMat = SMAT, neighbourhood = NEIGHBOURHOOD):
 
 # sanityCheck()
 # sanityCheck2()
-render(initFBCA(np.zeros((H, W), dtype=np.uint8) , S, fixedRNG = True), COLOURS, filename = "initial.png")
+# render(initFBCA(np.zeros((H, W), dtype=np.uint8) , S, fixedRNG = True), COLOURS, filename = "initial.png")
 
 folder = Path("initialParameters")
 for file in folder.iterdir():
