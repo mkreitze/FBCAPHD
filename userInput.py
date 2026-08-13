@@ -1,14 +1,13 @@
 
 import numpy as np
-
-# just incase something weird happens, it will still load these hardcoded values
+# general params
 W = 100 # width of FBCA
 H = 100 # height of FBCA
-GENS = 100
+GENS = 20
 # Number of states
-S = 3
+S = 2
 
-# Score matrix
+# Score matrix for example
 SMAT = np.array([
     [0.0, 0.1, 0.1],
     [0.1, 1.0, 1.0],
@@ -31,11 +30,18 @@ COLOURS = np.array([
 
 # default moore neighbourhood
 NEIGHBOURHOOD = np.array([
+    [0, 1, 0],
     [1, 1, 1],
-    [1, 1, 1],
-    [1, 1, 1]
-])
+    [0, 1, 0]
+], dtype=np.uint8)
 
+# for behaviours
+GRANULARITY = 1
+RADIUSOFPROJECTION = 10
+STARTX = RADIUSOFPROJECTION
+
+
+# Hard coded de Bruijn tori
 DEBT332 = np.array([
 [0,0,0,0,0,0,1,0,1,1,1,0,0,1,0,1,1,1,0,0,1,0,1,1,1,0,0,1,0,1,1,1],
 [0,0,0,1,0,0,1,1,1,1,1,1,0,1,0,0,1,1,0,1,1,0,1,0,1,0,0,0,0,1,1,0],
@@ -55,7 +61,6 @@ DEBT332 = np.array([
 [1,1,0,1,1,1,1,1,0,0,1,1,1,0,0,0,0,0,0,1,0,1,1,0,0,1,0,0,1,0,1,0],
 ])
 
-SIMSCORER = np.ones(DEBT332.shape, dtype=np.float32) 
 # DEBT222
 
 # DEBT223

@@ -5,8 +5,8 @@ from PIL import Image
 from scipy.signal import convolve2d
 from numpy.lib.stride_tricks import sliding_window_view
 from pathlib import Path
-from userInput import W, H, S, SMAT, COLOURS, NEIGHBOURHOOD, GENS
-
+from userInput import W, H, S, SMAT, COLOURS, NEIGHBOURHOOD # for general FBCA running
+from userInput import GENS, STARTX, RADIUSOFPROJECTION, GRANULARITY # for behaviour work
 
 def loadParams(filename):
     with open(filename, "r") as f:
@@ -36,7 +36,9 @@ def render(fbcaCur, colourMap = COLOURS, filename="output.png",save=True):
 
 def initFBCA(fbcaCur,stateNum = S, fixedRNG = False):
     if fixedRNG:
-        rng = np.random.default_rng(seed=7)
+        rng = np.random.default_rng(seed=1)
+    else:
+        rng = np.random.default_rng()
     fbcaCur = rng.integers(0, stateNum, size=fbcaCur.shape, dtype=np.uint8)
     return fbcaCur
 
@@ -94,8 +96,8 @@ def max_moore_neighbor_indices(arr,S,neighbourhood=NEIGHBOURHOOD):
     argmax = np.argmax(flat, axis=-1)
 
     # Convert neighborhood index -> row/col offset
-    di = argmax // S - 1
-    dj = argmax % S - 1
+    di = argmax // neighbourhood.shape[1] - neighbourhood.shape[0] // 2 # THIS IS NOW CORRECT
+    dj = argmax % neighbourhood.shape[1] - neighbourhood.shape[0] // 2 # THIS IS NOW CORRECT
 
     # Global coordinates
     rows, cols = np.indices(arr.shape)
@@ -155,13 +157,56 @@ def sanityCheck2(s = S, sMat = SMAT, neighbourhood = NEIGHBOURHOOD):
 
 
 
-# sanityCheck()
-# sanityCheck2()
-# render(initFBCA(np.zeros((H, W), dtype=np.uint8) , S, fixedRNG = True), COLOURS, filename = "initial.png")
 
-folder = Path("initialParameters")
-for file in folder.iterdir():
-    if file.is_file() and file.suffix == ".txt":
-        print(f"Running FBCA with parameters from {file.name}")
-        H, W, GENS, SMAT, S = loadParams(file)
-        runFBCA(S, SMAT, NEIGHBOURHOOD, steps=GENS, show = True, showFinal = True, filename = f"{file.stem}", colours = COLOURS, fixedRNG = True)
+# GENERAL SCORE MATRIX OF FORM
+# EW = sqrt(R^2 - X^2 - Y^2)
+# [X + Y + EW, Y- X- EW]  
+# [EW - X - Y, X- Y- EW]  
+# SEE MASTERS THESIS FOR JUSTIFICATIONS 
+
+# for sanity:
+# we pick an R for arbtirary projection radius size
+# we then constrain an x on the range of -R to R
+# we then compute y as -sqrt(R^2 - X^2) to sqrt(R^2 - X^2) 
+
+def detectBehaviours(startX, radiusOfProjection, granularity, states, gens, fileName = "defaultOutput.txt"):
+    detectedBehaviours = []
+    record = open(fileName, "w")
+    for x in np.arange(-startX, startX + granularity, granularity): # all xs
+        print(f"Non-linearly {(x+startX)/(2*granularity):.1f}% complete")
+        print(f"Found: {len(detectedBehaviours)} behaviours so far")
+        rSquared = radiusOfProjection**2
+        xSquared = x**2
+        isYPossible = rSquared - xSquared >= 1e-9
+        if x == -startX:
+            y = 0
+            isYPossible = True
+        if isYPossible:
+            yMax = np.sqrt(rSquared - xSquared)
+            yMin = -yMax
+            for y in np.arange(yMin, yMax + granularity, granularity): # all ys (this code is slow)
+                ew = np.sqrt(rSquared - xSquared - y**2) 
+                ewPossible = not np.isnan(ew)
+                if ewPossible:
+                    scoreMatrix = np.array([
+                        [x + y + ew, y - x - ew],
+                        [ew - x - y, x - y - ew]
+                    ],dtype=np.float32)
+                    finalFBCA = runFBCA(states, scoreMatrix, steps=gens, show=False, showFinal=False,fixedRNG = True)
+                    isIn = False
+                    for behaviour in detectedBehaviours:
+                        if (finalFBCA == behaviour[1]).all():
+                            isIn = True
+                            break
+                    if not isIn:
+                        detectedBehaviours.append((scoreMatrix, finalFBCA))
+    record.write(f"Total behaviours detected: {len(detectedBehaviours)}\n")
+    idx = 0
+    for behaviour in detectedBehaviours:
+        idx += 1
+        record.write(f"Behaviour {idx}\n")
+        record.write(f"Represented by Score Matrix:\n{behaviour[0]}\n\n")
+        render(behaviour[1], COLOURS, filename = f"behaviour{idx}.png")
+    record.close()
+    return detectedBehaviours
+
