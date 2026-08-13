@@ -133,7 +133,8 @@ def sanityCheck(h = H ,w= W,s = S):
     render(fbcaCur, COLOURS, "eye.png")
     print("Should be an orange line on black background called eye.png")
 
-def sanityCheck2(s = S, sMat = SMAT, neighbourhood = NEIGHBOURHOOD):
+def sanityCheck2(s, sMat = SMAT, neighbourhood = NEIGHBOURHOOD):
+    s = 3
     board = np.array([
         [1,1,1,1],
         [1,0,2,2],
@@ -173,11 +174,11 @@ def detectBehaviours(startX, radiusOfProjection, granularity, states, gens, file
     detectedBehaviours = []
     record = open(fileName, "w")
     for x in np.arange(-startX, startX + granularity, granularity): # all xs
-        print(f"Non-linearly {(x+startX)/(2*granularity):.1f}% complete")
+        print(f"Non-linearly {(x+startX)/(2*startX)*100:.1f}% complete")
         print(f"Found: {len(detectedBehaviours)} behaviours so far")
         rSquared = radiusOfProjection**2
         xSquared = x**2
-        isYPossible = rSquared - xSquared >= 1e-9
+        isYPossible = rSquared - xSquared >= 1e-11
         if x == -startX:
             y = 0
             isYPossible = True

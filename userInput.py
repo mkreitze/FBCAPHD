@@ -30,9 +30,9 @@ COLOURS = np.array([
 
 # default moore neighbourhood
 NEIGHBOURHOOD = np.array([
-    [0, 1, 0],
     [1, 1, 1],
-    [0, 1, 0]
+    [1, 1, 1],
+    [1, 1, 1]
 ], dtype=np.uint8)
 
 # for behaviours
