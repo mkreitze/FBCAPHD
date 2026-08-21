@@ -5,6 +5,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from userInput import W, H, S, SMAT, COLOURS, NEIGHBOURHOOD # for general FBCA running
 from userInput import GENS, STARTX, RADIUSOFPROJECTION, GRANULARITY # for behaviour work
+from collections import defaultdict
 from userInput import DEBT332# for behaviour work
 
 SANITYCHECK = False
@@ -12,26 +13,56 @@ COOL = False
 OLDBEHAVIOURS = False
 GETINITIALRANDOM = False
 GENVAR = False
+GENVARGRAPH = True
 GENDEBT222 = False
-APPLYMOOREDEBT = True
+APPLYMOOREDEBTNAIVE = False
+APPLYMOREADVANCED = False
 
-if APPLYMOOREDEBT:
+if APPLYMOOREDEBTNAIVE:
     allSMs = libFBCARun.readScoreMatricies("moore.txt") # gets the matricies from moore
-    histogram = []
+    scoredSMs = [];histogram=[]
     for sm in allSMs:
-        deBTUpdate = libFBCARun.updateFBCA(DEBT332,S,sm,NEIGHBOURHOOD)
-        histogram.append(deBTUpdate.sum())
+        deBTUpdate = libFBCARun.updateFBCA(DEBT332,S,sm,NEIGHBOURHOOD) 
+        histogram.append(deBTUpdate.sum()) # for histogram...
+        scoredSMs.append([sm,deBTUpdate.sum()])
     bins = np.arange(min(histogram) - 0.5, max(histogram) + 1.5, 1) # gets singular spots
+    counts, bins, patches = plt.hist(histogram,bins=bins);npCounts,npBins = np.histogram(histogram,bins=len(histogram))
+    plt.xlabel("Number of state 1");plt.ylabel("Behaviours with this score");plt.title("Histogram");plt.savefig("unique behaviours naive")
+
+    # using a dictionary to life to be easy
+    grouped = defaultdict(list)
+    for obj, idx in scoredSMs:
+        grouped[idx].append(obj)
+    grouped = dict(grouped)
+    for key, values in grouped.items():
+        libFBCARun.runFBCA(S,values[0],neighbourhood=NEIGHBOURHOOD,steps =  GENS,show=True,showFinal=True,filename=f"bin{key}",colours = COLOURS,fixedRNG=True)
+
+if APPLYMOREADVANCED:
+    allSMs = libFBCARun.readScoreMatricies("moore.txt") # gets the matricies from moore
+    scoredSMs = [];histogram=[]
+    for sm in allSMs:
+        deBTUpdate = libFBCARun.updateFBCA(DEBT332,S,sm,NEIGHBOURHOOD) 
+        histogram.append(deBTUpdate.sum()) # for histogram...
+        scoredSMs.append([sm,deBTUpdate.sum()])
+    bins = np.arange(min(histogram) - 0.5, max(histogram) + 1.5, max(histogram)/10) # gets singular spots
     counts, bins, patches = plt.hist(histogram,bins=bins)
-    plt.xlabel("Number of state 1")
-    plt.ylabel("Behaviours with this score")
-    plt.title("Histogram")
-    plt.savefig("unique behaviours naive")
-    filled_bins = np.count_nonzero(counts)
-    print(filled_bins)    
+    plt.xlabel("Number of state 1");plt.ylabel("Behaviours with this score");plt.title("Histogram");plt.savefig("unique behaviours advanced")
+    # using a dictionary to life to be easy
+    grouped = defaultdict(list)
+    for obj, idx in scoredSMs:
+        bin_start = (idx // 5) * 5
+        grouped[bin_start].append(obj)
+    grouped = dict(grouped)
+    print(grouped)
+    for key, values in grouped.items():
+        libFBCARun.runFBCA(S,values[0],neighbourhood=NEIGHBOURHOOD,steps =  GENS,show=True,showFinal=True,filename=f"bin{key}",colours = COLOURS,fixedRNG=True)    
 
 if GENDEBT222:
     libFBCARun.render(DEBT332,COLOURS,"deBT.png",True)
+
+if GENVARGRAPH:
+    libFBCARun.makeScatter("allGens1.txt",title = "Default L_0")
+    libFBCARun.makeScatter("allGens2.txt",title = "Another L_0")
 
 if GENVAR:
     allGens = "allGens.txt"

@@ -80,6 +80,23 @@ def getFinalScores(fbcaCur, S, sMat, neighbourhood = NEIGHBOURHOOD):
     )[0]
     return finalScores
 
+def makeScatter(filename,title = " "): # we assume X: Y
+    with open(filename) as f:
+        text = f.read()
+
+    matches = re.findall(r"(-?\d+)\s*:\s*(-?\d+)", text) # gets any possible integers
+
+    x = [int(a) for a, _ in matches]
+    y = [int(b) for _, b in matches]
+
+    plt.scatter(x, y, s=10)
+    plt.ylim(0, max(y)+5)
+    plt.title(title)
+    plt.xlabel("Number of Generations")
+    plt.ylabel("Number Weakly Behaviourally Equivlance Classes")
+    plt.savefig(f"{filename}.png", dpi=300)
+    plt.close()
+    return x, y
 
 def max_moore_neighbor_indices(arr,S,neighbourhood=NEIGHBOURHOOD):
     
