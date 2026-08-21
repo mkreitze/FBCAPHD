@@ -5,13 +5,31 @@ import numpy as np
 from userInput import W, H, S, SMAT, COLOURS, NEIGHBOURHOOD # for general FBCA running
 from userInput import GENS, STARTX, RADIUSOFPROJECTION, GRANULARITY # for behaviour work
 
-SANITYCHECK = True
-# libFBCARun.detectBehaviours(STARTX, RADIUSOFPROJECTION, GRANULARITY, S, GENS)
+SANITYCHECK = False
+COOL = False
+OLDBEHAVIOURS = True
+GETINITIALRANDOM = False
+GENVAR = False
 
-SMAT = np.array([[  2.8678498  , 4.849293 ], [  9.150706,  -16.86785  ]]) #COOL
+if OLDBEHAVIOURS:
+    libFBCARun.detectBehaviours(STARTX, RADIUSOFPROJECTION, GRANULARITY, S, GENS,fileName = "moore.txt")
 
-GENS = 100 
-libFBCARun.runFBCA(S, SMAT, NEIGHBOURHOOD, steps=GENS, show = True, showFinal = True, filename = f"cool", colours = COLOURS, fixedRNG = True)
+if GETINITIALRANDOM:
+    GENS = 0
+    libFBCARun.runFBCA(S, SMAT, NEIGHBOURHOOD, steps=GENS, show = True, showFinal = True, filename = f"L0", colours = COLOURS, fixedRNG = True)
+
+
+if GENVARS:
+    GENS = range(0, 200, 1)
+    for g in GENS:
+        libFBCARun.runFBCA(S, SMAT, NEIGHBOURHOOD, steps=g, show = True, showFinal = True, filename = f"L{g}", colours = COLOURS, fixedRNG = True)
+
+
+if COOL:
+    SMAT = np.array([[  2.8678498  , 4.849293 ], [  9.150706,  -16.86785  ]]) #COOL
+
+    GENS = 100 
+    libFBCARun.runFBCA(S, SMAT, NEIGHBOURHOOD, steps=GENS, show = True, showFinal = True, filename = f"cool", colours = COLOURS, fixedRNG = True)
 
 
 
@@ -40,4 +58,3 @@ if SANITYCHECK: # some sanity checks
 
     GENS = 100 
     libFBCARun.runFBCA(S, SMAT, NEIGHBOURHOOD, steps=GENS, show = True, showFinal = True, filename = f"spindle", colours = COLOURS, fixedRNG = True)
-

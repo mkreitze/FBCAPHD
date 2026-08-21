@@ -207,7 +207,7 @@ def detectBehaviours(startX, radiusOfProjection, granularity, states, gens, file
         idx += 1
         record.write(f"Behaviour {idx}\n")
         record.write(f"Represented by Score Matrix:\n{behaviour[0]}\n\n")
-        render(behaviour[1], COLOURS, filename = f"behaviour{idx}.png")
+        render(behaviour[1], COLOURS, filename = f"behaviour{idx}{fileName}.png")
     record.close()
     return detectedBehaviours
 
