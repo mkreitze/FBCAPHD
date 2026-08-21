@@ -2,36 +2,57 @@ from pathlib import Path
 
 import libFBCARun
 import numpy as np
+import matplotlib.pyplot as plt
 from userInput import W, H, S, SMAT, COLOURS, NEIGHBOURHOOD # for general FBCA running
 from userInput import GENS, STARTX, RADIUSOFPROJECTION, GRANULARITY # for behaviour work
+from userInput import DEBT332# for behaviour work
 
 SANITYCHECK = False
 COOL = False
-OLDBEHAVIOURS = True
+OLDBEHAVIOURS = False
 GETINITIALRANDOM = False
 GENVAR = False
+GENDEBT222 = False
+APPLYMOOREDEBT = True
+
+if APPLYMOOREDEBT:
+    allSMs = libFBCARun.readScoreMatricies("moore.txt") # gets the matricies from moore
+    histogram = []
+    for sm in allSMs:
+        deBTUpdate = libFBCARun.updateFBCA(DEBT332,S,sm,NEIGHBOURHOOD)
+        histogram.append(deBTUpdate.sum())
+    bins = np.arange(min(histogram) - 0.5, max(histogram) + 1.5, 1) # gets singular spots
+    counts, bins, patches = plt.hist(histogram,bins=bins)
+    plt.xlabel("Number of state 1")
+    plt.ylabel("Behaviours with this score")
+    plt.title("Histogram")
+    plt.savefig("unique behaviours naive")
+    filled_bins = np.count_nonzero(counts)
+    print(filled_bins)    
+
+if GENDEBT222:
+    libFBCARun.render(DEBT332,COLOURS,"deBT.png",True)
+
+if GENVAR:
+    allGens = "allGens.txt"
+    GENS = range(2, 200, 1)
+    with open(allGens, "w") as f:
+        for g in GENS:
+            behaviours = libFBCARun.detectBehaviours(STARTX, RADIUSOFPROJECTION, GRANULARITY, S, g,fileName = f"L{g}.txt",showEachBehaviour = False)
+            f.write(f"{g}: {len(behaviours)}\n")
 
 if OLDBEHAVIOURS:
-    libFBCARun.detectBehaviours(STARTX, RADIUSOFPROJECTION, GRANULARITY, S, GENS,fileName = "moore.txt")
+    libFBCARun.detectBehaviours(STARTX, RADIUSOFPROJECTION, GRANULARITY, S, GENS,fileName = "moore.txt",showEachBehaviour = True,getGifs = True,getFinals = True)
 
 if GETINITIALRANDOM:
     GENS = 0
-    libFBCARun.runFBCA(S, SMAT, NEIGHBOURHOOD, steps=GENS, show = True, showFinal = True, filename = f"L0", colours = COLOURS, fixedRNG = True)
-
-
-if GENVARS:
-    GENS = range(0, 200, 1)
-    for g in GENS:
-        libFBCARun.runFBCA(S, SMAT, NEIGHBOURHOOD, steps=g, show = True, showFinal = True, filename = f"L{g}", colours = COLOURS, fixedRNG = True)
-
+    libFBCARun.runFBCA(2, SMAT, NEIGHBOURHOOD, steps=GENS, show = True, showFinal = True, filename = f"L(0).txt", colours = COLOURS, fixedRNG = True)
 
 if COOL:
     SMAT = np.array([[  2.8678498  , 4.849293 ], [  9.150706,  -16.86785  ]]) #COOL
 
     GENS = 100 
     libFBCARun.runFBCA(S, SMAT, NEIGHBOURHOOD, steps=GENS, show = True, showFinal = True, filename = f"cool", colours = COLOURS, fixedRNG = True)
-
-
 
 if SANITYCHECK: # some sanity checks
     libFBCARun.sanityCheck()

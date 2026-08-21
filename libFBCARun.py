@@ -1,6 +1,7 @@
 
 import numpy as np
 import matplotlib.pyplot as plt
+import re
 from PIL import Image
 from scipy.signal import convolve2d
 from numpy.lib.stride_tricks import sliding_window_view
@@ -112,7 +113,7 @@ def updateFBCA(fbcaCur, S, sMat, neighbourhood = NEIGHBOURHOOD):
     fbcaNext = fbcaCur[next_rows, next_cols] #updates the map
     return fbcaNext
 
-def runFBCA(S, sMat, neighbourhood = NEIGHBOURHOOD, steps=GENS, show = False, showFinal = True, filename = "output.png", colours = COLOURS, fixedRNG = False):
+def runFBCA(S, sMat, neighbourhood = NEIGHBOURHOOD, steps=GENS, show = False, showFinal = False, filename = "output.png", colours = COLOURS, fixedRNG = False):
     fbcaCur = initFBCA(np.zeros((H, W), dtype=np.uint8) , S, fixedRNG = fixedRNG) 
     frames = []
     for step in range(steps):
@@ -156,8 +157,24 @@ def sanityCheck2(s, sMat = SMAT, neighbourhood = NEIGHBOURHOOD):
     test = board[next_rows, next_cols]
     print(test)
 
+def readScoreMatricies(fileName):
+    with open(fileName) as f:
+        text = f.read()
+    totalBehaviours = int(re.search(r'Total behaviours detected:\s*(\d+)', text).group(1)) #group 1 implies we are taking (d) by itself
+    matrixAsString = re.findall(r'\[\[(.*?)\]\]', text, re.DOTALL) 
 
+    allScoreMatricies = []
+    for mat in matrixAsString:
+        rows = mat.strip().split('\n') # kills the newlines
+        matrix = []
+        for row in rows:
+            nums = re.findall(r"-?\d+(?:\.\d+)?(?:[eE][+-]?\d+)?", row) #parses the numbers
+            # the e stuff from above clears out some very small numbers
+            matrix.append([float(x) for x in nums]) #puts them numerically back in
+        allScoreMatricies.append(matrix) #adds it in
 
+    matrices = [np.array(m) for m in allScoreMatricies] #turns them into numpy matricies
+    return(matrices)
 
 # GENERAL SCORE MATRIX OF FORM
 # EW = sqrt(R^2 - X^2 - Y^2)
@@ -170,7 +187,7 @@ def sanityCheck2(s, sMat = SMAT, neighbourhood = NEIGHBOURHOOD):
 # we then constrain an x on the range of -R to R
 # we then compute y as -sqrt(R^2 - X^2) to sqrt(R^2 - X^2) 
 
-def detectBehaviours(startX, radiusOfProjection, granularity, states, gens, fileName = "defaultOutput.txt"):
+def detectBehaviours(startX, radiusOfProjection, granularity, states, gens, fileName = "defaultOutput.txt",showEachBehaviour = True, getGifs = False, getFinals = False):
     detectedBehaviours = []
     record = open(fileName, "w")
     for x in np.arange(-startX, startX + granularity, granularity): # all xs
@@ -207,7 +224,10 @@ def detectBehaviours(startX, radiusOfProjection, granularity, states, gens, file
         idx += 1
         record.write(f"Behaviour {idx}\n")
         record.write(f"Represented by Score Matrix:\n{behaviour[0]}\n\n")
-        render(behaviour[1], COLOURS, filename = f"behaviour{idx}{fileName}.png")
+        if showEachBehaviour:
+            render(behaviour[1], COLOURS, filename = f"{fileName}behaviour{idx}.png")
+        if getGifs or getFinals:
+            runFBCA(states, behaviour[0], steps=gens, show=getGifs, showFinal=getFinals,fixedRNG = True,filename=str(idx))
     record.close()
     return detectedBehaviours
 
