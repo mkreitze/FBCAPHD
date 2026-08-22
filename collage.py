@@ -4,7 +4,7 @@ import math
 import re
 
 # Find all images
-files = glob.glob("bin*.png")
+files = glob.glob("sm*.png")
 
 # Sort by the number in the filename
 def get_num(filename):

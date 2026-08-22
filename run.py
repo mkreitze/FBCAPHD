@@ -13,16 +13,19 @@ COOL = False
 OLDBEHAVIOURS = False
 GETINITIALRANDOM = False
 GENVAR = False
-GENVARGRAPH = True
+GENVARGRAPH = False
 GENDEBT222 = False
-APPLYMOOREDEBTNAIVE = False
-APPLYMOREADVANCED = False
+APPLYMOOREDEBTNAIVE = True
+MULTIPLEBINSIZES = False
 
 if APPLYMOOREDEBTNAIVE:
     allSMs = libFBCARun.readScoreMatricies("moore.txt") # gets the matricies from moore
     scoredSMs = [];histogram=[]
+    idx= 0
     for sm in allSMs:
+        idx += 1
         deBTUpdate = libFBCARun.updateFBCA(DEBT332,S,sm,NEIGHBOURHOOD) 
+        libFBCARun.render(deBTUpdate,COLOURS,f"sm{idx}.png")
         histogram.append(deBTUpdate.sum()) # for histogram...
         scoredSMs.append([sm,deBTUpdate.sum()])
     bins = np.arange(min(histogram) - 0.5, max(histogram) + 1.5, 1) # gets singular spots
@@ -30,32 +33,39 @@ if APPLYMOOREDEBTNAIVE:
     plt.xlabel("Number of state 1");plt.ylabel("Behaviours with this score");plt.title("Histogram");plt.savefig("unique behaviours naive")
 
     # using a dictionary to life to be easy
-    grouped = defaultdict(list)
-    for obj, idx in scoredSMs:
-        grouped[idx].append(obj)
-    grouped = dict(grouped)
-    for key, values in grouped.items():
-        libFBCARun.runFBCA(S,values[0],neighbourhood=NEIGHBOURHOOD,steps =  GENS,show=True,showFinal=True,filename=f"bin{key}",colours = COLOURS,fixedRNG=True)
+    # grouped = defaultdict(list)
+    # for obj, idx in scoredSMs:
+    #     grouped[idx].append(obj)
+    # grouped = dict(grouped)
+    # for key, values in grouped.items():
+        # libFBCARun.runFBCA(S,values[0],neighbourhood=NEIGHBOURHOOD,steps =  GENS,show=True,showFinal=True,filename=f"bin{key}",colours = COLOURS,fixedRNG=True)
 
-if APPLYMOREADVANCED:
+if MULTIPLEBINSIZES:
+    binsize = [1,2,5,10,20,40,50,100]
     allSMs = libFBCARun.readScoreMatricies("moore.txt") # gets the matricies from moore
     scoredSMs = [];histogram=[]
     for sm in allSMs:
         deBTUpdate = libFBCARun.updateFBCA(DEBT332,S,sm,NEIGHBOURHOOD) 
         histogram.append(deBTUpdate.sum()) # for histogram...
         scoredSMs.append([sm,deBTUpdate.sum()])
-    bins = np.arange(min(histogram) - 0.5, max(histogram) + 1.5, max(histogram)/10) # gets singular spots
-    counts, bins, patches = plt.hist(histogram,bins=bins)
-    plt.xlabel("Number of state 1");plt.ylabel("Behaviours with this score");plt.title("Histogram");plt.savefig("unique behaviours advanced")
-    # using a dictionary to life to be easy
-    grouped = defaultdict(list)
-    for obj, idx in scoredSMs:
-        bin_start = (idx // 5) * 5
-        grouped[bin_start].append(obj)
-    grouped = dict(grouped)
-    print(grouped)
-    for key, values in grouped.items():
-        libFBCARun.runFBCA(S,values[0],neighbourhood=NEIGHBOURHOOD,steps =  GENS,show=True,showFinal=True,filename=f"bin{key}",colours = COLOURS,fixedRNG=True)    
+    for sizeOfBin in binsize:
+        bins = np.arange(min(histogram) - 0.5, max(histogram) + 1.5, max(histogram)/sizeOfBin) # gets singular spots
+        counts, bins, patches = plt.hist(histogram,bins=bins)
+        plt.xlabel("Number of state 1");plt.ylabel("Behaviours with this score");plt.title("Histogram");plt.savefig("unique behaviours advanced")
+        # using a dictionary to life to be easy
+        grouped = defaultdict(list)
+        for obj, idx in scoredSMs:
+            bin_start = (idx // sizeOfBin) * sizeOfBin
+            grouped[bin_start].append(obj)
+        grouped = dict(grouped)
+        print(grouped)
+        idx = 0
+        for key, values in grouped.items():
+            idx+=1
+            libFBCARun.runFBCA(S,values[0],neighbourhood=NEIGHBOURHOOD,steps =  GENS,show=True,showFinal=True,filename=f"bin{key}",colours = COLOURS,fixedRNG=True)    
+        print(sizeOfBin)
+        print(idx)
+        input("Move files")
 
 if GENDEBT222:
     libFBCARun.render(DEBT332,COLOURS,"deBT.png",True)
