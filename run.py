@@ -18,6 +18,8 @@ GENDEBT222 = False
 APPLYMOOREDEBTNAIVE = True
 MULTIPLEBINSIZES = False
 
+
+
 if APPLYMOOREDEBTNAIVE:
     allSMs = libFBCARun.readScoreMatricies("moore.txt") # gets the matricies from moore
     scoredSMs = [];histogram=[]

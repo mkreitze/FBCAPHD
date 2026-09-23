@@ -4,7 +4,8 @@ import math
 import re
 
 # Find all images
-files = glob.glob("sm*.png")
+stringOfImport = "simlarity"
+files = glob.glob(f"{stringOfImport}*.png")
 
 # Sort by the number in the filename
 def get_num(filename):
@@ -41,6 +42,6 @@ for i, img in enumerate(images):
     montage.paste(img, (x, y))
 
 # Save result
-montage.save("behaviourAllTogether.png")
+montage.save(f"{stringOfImport}AllTogether.png")
 
 print(f"Created {rows}x{cols} montage with {n} images.")
