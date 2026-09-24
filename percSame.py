@@ -5,6 +5,7 @@ import re
 import math
 import matplotlib.pyplot as plt
 
+desiredString = "smA"
 # loads png, looks through colours, outputs binary matrix
 def png_to_binary_matrix(filename):
     # Load image as grayscale
@@ -56,56 +57,59 @@ def makePic(similarity_matrix, rows, cols,index):
 
     plt.savefig(f"simlarity{index}.png")
 
-# gets all pngs (unsorted)
-files = glob.glob("behaviour*.png")
+def getFiles(desiredString = "behaviour"):
+
+    files = glob.glob(f"{desiredString}*.png")
+    # sorts numerically. None is a problem because grep
+    for f in files:
+        if re.search(rf"{desiredString}(\d+)\.png", f) is None:
+            print("PROBLEM FILE:", f)
+    files.sort(
+        key=lambda f: int(re.search(rf"{desiredString}(\d+)\.png", f).group(1))
+    )
+
+    dimImage = len(files)
+    cols = math.ceil(math.sqrt(dimImage))
+    rows = math.ceil(dimImage / cols)
+    A = np.zeros((rows, cols), dtype=np.uint8)
+    return(files, A, rows, cols)
 
 
-for f in files:
-    if re.search(r"behaviour(\d+)\.png", f) is None:
-        print("PROBLEM FILE:", f)
-# Sort numerically rather than alphabetically
-# so behaviour2.png comes before behaviour10.png
-files.sort(
-    key=lambda f: int(re.search(r"behaviour(\d+)\.png", f).group(1))
-)
+if __name__ == "__main__":
+    files, A, rows, cols = getFiles(desiredString)
 
-dimImage = len(files)
-cols = math.ceil(math.sqrt(dimImage))
-rows = math.ceil(dimImage / cols)
-A = np.zeros((rows, cols), dtype=np.uint8)
+    for j in range(1,len(files)+1):
+        # Your hardcoded binary matrix
+        target = png_to_binary_matrix(f"{desiredString}{j}.png")  # Load the target matrix from behaviour1.png
+        # goes through files, checks number of equis 
+        for i,filename in enumerate(files):
 
-for j in range(1,len(files)+1):
-    # Your hardcoded binary matrix
-    target = png_to_binary_matrix(f"behaviour{j}.png")  # Load the target matrix from behaviour1.png
-    # goes through files, checks number of equis 
-    for i,filename in enumerate(files):
+            matrix = png_to_binary_matrix(filename)
 
-        matrix = png_to_binary_matrix(filename)
+            # Make sure the matrices have the same dimensions
+            if matrix.shape != target.shape:
+                print(
+                    f"{filename}: shape mismatch "
+                    f"{matrix.shape} vs {target.shape}"
+                )
+                continue
 
-        # Make sure the matrices have the same dimensions
-        if matrix.shape != target.shape:
+            # Element-by-element comparison
+            matches = matrix == target
+            # Count matching entries
+            num_matches = np.sum(matches)
+
+            # Total number of entries
+            total = target.size
+            percSame = (num_matches / total) * 100
             print(
-                f"{filename}: shape mismatch "
-                f"{matrix.shape} vs {target.shape}"
+                f"{filename}: {num_matches}/{total} entries match "
+                f"({100 * num_matches / total:.1f}%)"
             )
-            continue
 
-        # Element-by-element comparison
-        matches = matrix == target
+            row = i // cols
+            col = i % cols
+            A[row, col] = percSame
 
-        # Count matching entries
-        num_matches = np.sum(matches)
-
-        # Total number of entries
-        total = target.size
-        percSame = (num_matches / total) * 100
-        print(
-            f"{filename}: {num_matches}/{total} entries match "
-            f"({100 * num_matches / total:.1f}%)"
-        )
-        row = i // cols
-        col = i % cols
-        A[row, col] = percSame
-
-    makePic(A, rows, cols,j)
+        makePic(A, rows, cols,j)
 

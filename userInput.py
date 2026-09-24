@@ -3,7 +3,7 @@ import numpy as np
 # general params
 W = 100 # width of FBCA
 H = 100 # height of FBCA
-GENS = 20
+GENS = 25
 # Number of states
 S = 2
 
