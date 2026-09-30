@@ -10,7 +10,7 @@ from userInput import DEBT332# for behaviour work
 
 SANITYCHECK = False
 COOL = False
-OLDBEHAVIOURS = False
+OLDBEHAVIOURS = True
 GETINITIALRANDOM = False
 GENVAR = False
 GENVARGRAPH = False
@@ -49,7 +49,7 @@ if GENVAR:
             f.write(f"{g}: {len(behaviours)}\n")
 
 if OLDBEHAVIOURS:
-    libFBCARun.detectBehaviours(STARTX, RADIUSOFPROJECTION, GRANULARITY, S, GENS,fileName = "moore.txt",showEachBehaviour = True,getGifs = True,getFinals = True)
+    libFBCARun.detectBehaviours(STARTX, RADIUSOFPROJECTION, GRANULARITY, S, GENS,fileName = "mooreA",showEachBehaviour = True,getGifs = True,getFinals = True)
 
 if GETINITIALRANDOM:
     GENS = 0

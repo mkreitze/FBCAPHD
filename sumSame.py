@@ -2,7 +2,7 @@ import percSame
 import numpy as np
 import matplotlib.pyplot as plt
 
-desiredString = "behaviour"  # Change this to the desired filename
+desiredString = "mooreAbehaviour"  # Change this to the desired filename
 histOutputName = "histNaiveFull"  # Change this to the desired output histogram filename
 files, A, rows, cols = percSame.getFiles(desiredString)
 

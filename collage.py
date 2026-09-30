@@ -4,7 +4,7 @@ import math
 import re
 
 # Find all images
-stringOfImport = "simlarity"
+stringOfImport = "simlarity" 
 files = glob.glob(f"{stringOfImport}*.png")
 
 # Sort by the number in the filename
