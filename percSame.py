@@ -5,7 +5,7 @@ import re
 import math
 import matplotlib.pyplot as plt
 
-desiredString = "mooreAbehaviour"
+desiredString = "smA"
 # loads png, looks through colours, outputs binary matrix
 def png_to_binary_matrix(filename):
     # Load image as grayscale

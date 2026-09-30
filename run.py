@@ -10,12 +10,13 @@ from userInput import DEBT332# for behaviour work
 
 SANITYCHECK = False
 COOL = False
-OLDBEHAVIOURS = True
+OLDBEHAVIOURS = False
 GETINITIALRANDOM = False
 GENVAR = False
 GENVARGRAPH = False
 GENDEBT222 = False
 APPLYMOOREDEBTNAIVE = False
+APPLYMOOREDEBTNAIVEG25 = True
 MULTIPLEBINSIZES = False
 
 
@@ -32,6 +33,24 @@ if APPLYMOOREDEBTNAIVE:
         libFBCARun.render(deBTUpdate,COLOURS,f"smA{idx}.png")
         deBTUpdate = libFBCARun.updateFBCA(v2,S,sm,NEIGHBOURHOOD) 
         libFBCARun.render(deBTUpdate,COLOURS,f"smB{idx}.png")
+
+if APPLYMOOREDEBTNAIVEG25:
+    allSMs = libFBCARun.readScoreMatricies("moore.txt") # gets the matricies from moore
+    # scoredSMs = [];histogram=[]
+    idx= 0
+    v1 = np.load("torus1.npy")
+    v2 = np.load("torus2.npy")
+    for sm in allSMs:
+        idx += 1
+        deBTUpdate = libFBCARun.updateFBCA(v1,S,sm,NEIGHBOURHOOD) 
+        for i in range(25):
+            deBTUpdate = libFBCARun.updateFBCA(deBTUpdate,S,sm,NEIGHBOURHOOD)
+        libFBCARun.render(deBTUpdate,COLOURS,f"smA{idx}.png")
+        deBTUpdate = libFBCARun.updateFBCA(v2,S,sm,NEIGHBOURHOOD) 
+        for i in range(25):
+            deBTUpdate = libFBCARun.updateFBCA(deBTUpdate,S,sm,NEIGHBOURHOOD)
+        libFBCARun.render(deBTUpdate,COLOURS,f"smB{idx}.png")
+
 
 if GENDEBT222:
     libFBCARun.render(DEBT332,COLOURS,"deBT.png",True)
