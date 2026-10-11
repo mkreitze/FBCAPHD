@@ -2,8 +2,11 @@ from pathlib import Path
 
 import libFBCARun
 import numpy as np
+import matplotlib.pyplot as plt
 from userInput import W, H, S, SMAT, COLOURS, NEIGHBOURHOOD # for general FBCA running
 from userInput import GENS, STARTX, RADIUSOFPROJECTION, GRANULARITY # for behaviour work
+from collections import defaultdict
+from userInput import DEBT332# for behaviour work
 
 SANITYCHECK = False
 COOL = False
@@ -18,14 +21,14 @@ if L0THREESTATE:
 
 
 if OLDBEHAVIOURS:
-    libFBCARun.detectBehaviours(STARTX, RADIUSOFPROJECTION, GRANULARITY, S, GENS,fileName = "moore.txt")
+    libFBCARun.detectBehaviours(STARTX, RADIUSOFPROJECTION, GRANULARITY, S, GENS,fileName = "mooreA",showEachBehaviour = True,getGifs = True,getFinals = True)
 
 if GETINITIALRANDOM:
     GENS = 0
     libFBCARun.runFBCA(S, SMAT, NEIGHBOURHOOD, steps=GENS, show = True, showFinal = True, filename = f"L0", colours = COLOURS, fixedRNG = True)
 
 
-if GENVAR:
+if GENVARS:
     GENS = range(0, 200, 1)
     for g in GENS:
         libFBCARun.runFBCA(S, SMAT, NEIGHBOURHOOD, steps=g, show = True, showFinal = True, filename = f"L{g}", colours = COLOURS, fixedRNG = True)
@@ -36,8 +39,6 @@ if COOL:
 
     GENS = 100 
     libFBCARun.runFBCA(S, SMAT, NEIGHBOURHOOD, steps=GENS, show = True, showFinal = True, filename = f"cool", colours = COLOURS, fixedRNG = True)
-
-
 
 if SANITYCHECK: # some sanity checks
     libFBCARun.sanityCheck()

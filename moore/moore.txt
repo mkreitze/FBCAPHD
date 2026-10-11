@@ -1,4 +1,4 @@
-Total behaviours detected: 86
+Total behaviours detected: 85
 Behaviour 1
 Represented by Score Matrix:
 [[-10.  10.]
@@ -423,9 +423,4 @@ Behaviour 85
 Represented by Score Matrix:
 [[ 10.3065605 -15.024359 ]
  [ -2.9756413   7.693439 ]]
-
-Behaviour 86
-Represented by Score Matrix:
-[[ 11.782766  -14.500565 ]
- [ -3.4994354   6.217233 ]]
 

@@ -1,6 +1,7 @@
 
 import numpy as np
 import matplotlib.pyplot as plt
+import re
 from PIL import Image
 from scipy.signal import convolve2d
 from numpy.lib.stride_tricks import sliding_window_view
@@ -79,6 +80,23 @@ def getFinalScores(fbcaCur, S, sMat, neighbourhood = NEIGHBOURHOOD):
     )[0]
     return finalScores
 
+def makeScatter(filename,title = " "): # we assume X: Y
+    with open(filename) as f:
+        text = f.read()
+
+    matches = re.findall(r"(-?\d+)\s*:\s*(-?\d+)", text) # gets any possible integers
+
+    x = [int(a) for a, _ in matches]
+    y = [int(b) for _, b in matches]
+
+    plt.scatter(x, y, s=10)
+    plt.ylim(0, max(y)+5)
+    plt.title(title)
+    plt.xlabel("Number of Generations")
+    plt.ylabel("Number Weakly Behaviourally Equivlance Classes")
+    plt.savefig(f"{filename}.png", dpi=300)
+    plt.close()
+    return x, y
 
 def max_moore_neighbor_indices(arr,S,neighbourhood=NEIGHBOURHOOD):
     
@@ -112,7 +130,7 @@ def updateFBCA(fbcaCur, S, sMat, neighbourhood = NEIGHBOURHOOD):
     fbcaNext = fbcaCur[next_rows, next_cols] #updates the map
     return fbcaNext
 
-def runFBCA(S, sMat, neighbourhood = NEIGHBOURHOOD, steps=GENS, show = False, showFinal = True, filename = "output.png", colours = COLOURS, fixedRNG = False):
+def runFBCA(S, sMat, neighbourhood = NEIGHBOURHOOD, steps=GENS, show = False, showFinal = False, filename = "output.png", colours = COLOURS, fixedRNG = False):
     fbcaCur = initFBCA(np.zeros((H, W), dtype=np.uint8) , S, fixedRNG = fixedRNG) 
     frames = []
     for step in range(steps):
@@ -156,8 +174,24 @@ def sanityCheck2(s, sMat = SMAT, neighbourhood = NEIGHBOURHOOD):
     test = board[next_rows, next_cols]
     print(test)
 
+def readScoreMatricies(fileName):
+    with open(fileName) as f:
+        text = f.read()
+    totalBehaviours = int(re.search(r'Total behaviours detected:\s*(\d+)', text).group(1)) #group 1 implies we are taking (d) by itself
+    matrixAsString = re.findall(r'\[\[(.*?)\]\]', text, re.DOTALL) 
 
+    allScoreMatricies = []
+    for mat in matrixAsString:
+        rows = mat.strip().split('\n') # kills the newlines
+        matrix = []
+        for row in rows:
+            nums = re.findall(r"-?\d+(?:\.\d+)?(?:[eE][+-]?\d+)?", row) #parses the numbers
+            # the e stuff from above clears out some very small numbers
+            matrix.append([float(x) for x in nums]) #puts them numerically back in
+        allScoreMatricies.append(matrix) #adds it in
 
+    matrices = [np.array(m) for m in allScoreMatricies] #turns them into numpy matricies
+    return(matrices)
 
 # GENERAL SCORE MATRIX OF FORM
 # EW = sqrt(R^2 - X^2 - Y^2)
@@ -170,7 +204,7 @@ def sanityCheck2(s, sMat = SMAT, neighbourhood = NEIGHBOURHOOD):
 # we then constrain an x on the range of -R to R
 # we then compute y as -sqrt(R^2 - X^2) to sqrt(R^2 - X^2) 
 
-def detectBehaviours(startX, radiusOfProjection, granularity, states, gens, fileName = "defaultOutput.txt"):
+def detectBehaviours(startX, radiusOfProjection, granularity, states, gens, fileName = "defaultOutput.txt",showEachBehaviour = True, getGifs = False, getFinals = False):
     detectedBehaviours = []
     record = open(fileName, "w")
     for x in np.arange(-startX, startX + granularity, granularity): # all xs
@@ -207,7 +241,10 @@ def detectBehaviours(startX, radiusOfProjection, granularity, states, gens, file
         idx += 1
         record.write(f"Behaviour {idx}\n")
         record.write(f"Represented by Score Matrix:\n{behaviour[0]}\n\n")
-        render(behaviour[1], COLOURS, filename = f"behaviour{idx}{fileName}.png")
+        if showEachBehaviour:
+            render(behaviour[1], COLOURS, filename = f"{fileName}behaviour{idx}.png")
+        if getGifs or getFinals:
+            runFBCA(states, behaviour[0], steps=gens, show=getGifs, showFinal=getFinals,fixedRNG = True,filename=str(idx))
     record.close()
     return detectedBehaviours
 
