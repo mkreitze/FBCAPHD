@@ -7,9 +7,15 @@ from userInput import GENS, STARTX, RADIUSOFPROJECTION, GRANULARITY # for behavi
 
 SANITYCHECK = False
 COOL = False
-OLDBEHAVIOURS = True
+OLDBEHAVIOURS = False
 GETINITIALRANDOM = False
 GENVAR = False
+L0THREESTATE = False
+
+if L0THREESTATE:
+    SMAT = np.array([[  1 , 1, 1], [  1,  1, 1],[  1,  1, 1]]) #COOL
+    libFBCARun.runFBCA(3, SMAT, NEIGHBOURHOOD, steps=1, show = True, showFinal = True, filename = f"L0ThreeState", colours = COLOURS, fixedRNG = True)
+
 
 if OLDBEHAVIOURS:
     libFBCARun.detectBehaviours(STARTX, RADIUSOFPROJECTION, GRANULARITY, S, GENS,fileName = "moore.txt")
@@ -19,7 +25,7 @@ if GETINITIALRANDOM:
     libFBCARun.runFBCA(S, SMAT, NEIGHBOURHOOD, steps=GENS, show = True, showFinal = True, filename = f"L0", colours = COLOURS, fixedRNG = True)
 
 
-if GENVARS:
+if GENVAR:
     GENS = range(0, 200, 1)
     for g in GENS:
         libFBCARun.runFBCA(S, SMAT, NEIGHBOURHOOD, steps=g, show = True, showFinal = True, filename = f"L{g}", colours = COLOURS, fixedRNG = True)
