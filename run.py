@@ -16,7 +16,7 @@ GENVAR = False
 L0THREESTATE = False
 
 if L0THREESTATE:
-    SMAT = np.array([[  1 , 1, 1], [  1,  1, 1],[  1,  1, 1]]) #COOL
+    SMAT = np.array([[  1 , 1, 1], [  1,  1, 1],[  1,  1, 1]]) #Simple
     libFBCARun.runFBCA(3, SMAT, NEIGHBOURHOOD, steps=1, show = True, showFinal = True, filename = f"L0ThreeState", colours = COLOURS, fixedRNG = True)
 
 
