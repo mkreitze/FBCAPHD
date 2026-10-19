@@ -11,8 +11,10 @@ from userInput import DEBT332# for behaviour work
 SANITYCHECK = False
 COOL = False
 OLDBEHAVIOURS = False
+GRANPOINTFIVE = False
+GRANPOINTONE = False
 GETINITIALRANDOM = False
-GENVAR = False
+GENVARS = False
 L0THREESTATE = False
 
 if L0THREESTATE:
@@ -21,7 +23,13 @@ if L0THREESTATE:
 
 
 if OLDBEHAVIOURS:
-    libFBCARun.detectBehaviours(STARTX, RADIUSOFPROJECTION, GRANULARITY, S, GENS,fileName = "mooreA",showEachBehaviour = True,getGifs = True,getFinals = True)
+    libFBCARun.detectBehaviours(STARTX, RADIUSOFPROJECTION, GRANULARITY, S, GENS,fileName = "mooreGran1",showEachBehaviour = True,getGifs = True,getFinals = True)
+
+if GRANPOINTFIVE:
+    libFBCARun.detectBehaviours(STARTX, RADIUSOFPROJECTION, 0.5, S, GENS,fileName = "mooreGranP5",showEachBehaviour = True,getGifs = True,getFinals = True)
+
+if GRANPOINTONE:
+    libFBCARun.detectBehaviours(STARTX, RADIUSOFPROJECTION, 0.1, S, GENS,fileName = "mooreGranP1",showEachBehaviour = True,getGifs = True,getFinals = True)
 
 if GETINITIALRANDOM:
     GENS = 0

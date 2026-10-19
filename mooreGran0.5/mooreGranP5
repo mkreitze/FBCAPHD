@@ -1,0 +1,1266 @@
+Total behaviours detected: 253
+Behaviour 1
+Represented by Score Matrix:
+[[-10.  10.]
+ [ 10. -10.]]
+
+Behaviour 2
+Represented by Score Matrix:
+[[-12.622499   6.377501]
+ [ 12.622499  -6.377501]]
+
+Behaviour 3
+Represented by Score Matrix:
+[[-10.427654    5.1826563]
+ [ 13.817344   -8.572346 ]]
+
+Behaviour 4
+Represented by Score Matrix:
+[[-9.332303  5.087305]
+ [13.912695 -9.667697]]
+
+Behaviour 5
+Represented by Score Matrix:
+[[ -8.454636   5.209637]
+ [ 13.790362 -10.545364]]
+
+Behaviour 6
+Represented by Score Matrix:
+[[ -7.7087393   5.4637413]
+ [ 13.536259  -11.291261 ]]
+
+Behaviour 7
+Represented by Score Matrix:
+[[ -7.06268    5.817682]
+ [ 13.182319 -11.937321]]
+
+Behaviour 8
+Represented by Score Matrix:
+[[ -6.5024037   6.2574058]
+ [ 12.742594  -12.497596 ]]
+
+Behaviour 9
+Represented by Score Matrix:
+[[ -6.0229034   6.7779055]
+ [ 12.222095  -12.977097 ]]
+
+Behaviour 10
+Represented by Score Matrix:
+[[ -5.3202696   8.075272 ]
+ [ 10.924728  -13.67973  ]]
+
+Behaviour 11
+Represented by Score Matrix:
+[[ -5.127506   8.882508]
+ [ 10.117492 -13.872494]]
+
+Behaviour 12
+Represented by Score Matrix:
+[[ -5.0982733   9.853275 ]
+ [  9.146725  -13.901727 ]]
+
+Behaviour 13
+Represented by Score Matrix:
+[[ -5.4100685  11.165071 ]
+ [  7.8349295 -13.5899315]]
+
+Behaviour 14
+Represented by Score Matrix:
+[[-10.831857    3.1140592]
+ [ 14.885941   -7.168143 ]]
+
+Behaviour 15
+Represented by Score Matrix:
+[[-9.580807   2.8630085]
+ [15.1369915 -8.419193 ]]
+
+Behaviour 16
+Represented by Score Matrix:
+[[-8.568504   2.8507063]
+ [15.149294  -9.431496 ]]
+
+Behaviour 17
+Represented by Score Matrix:
+[[ -7.693439    2.9756413]
+ [ 15.024359  -10.3065605]]
+
+Behaviour 18
+Represented by Score Matrix:
+[[ -6.9162483   3.1984503]
+ [ 14.80155   -11.083752 ]]
+
+Behaviour 19
+Represented by Score Matrix:
+[[ -6.217233    3.4994354]
+ [ 14.500565  -11.782766 ]]
+
+Behaviour 20
+Represented by Score Matrix:
+[[ -5.5854588   3.8676608]
+ [ 14.1323395 -12.414541 ]]
+
+Behaviour 21
+Represented by Score Matrix:
+[[ -5.0148005   4.297003 ]
+ [ 13.702997  -12.9852   ]]
+
+Behaviour 22
+Represented by Score Matrix:
+[[ -4.5022845   4.7844863]
+ [ 13.215513  -13.497716 ]]
+
+Behaviour 23
+Represented by Score Matrix:
+[[ -4.047404   5.329606]
+ [ 12.670394 -13.952596]]
+
+Behaviour 24
+Represented by Score Matrix:
+[[ -3.652013   5.934215]
+ [ 12.065784 -14.347987]]
+
+Behaviour 25
+Represented by Score Matrix:
+[[ -3.3207326   6.602935 ]
+ [ 11.397065  -14.679267 ]]
+
+Behaviour 26
+Represented by Score Matrix:
+[[ -2.8912506   8.173452 ]
+ [  9.826548  -15.108749 ]]
+
+Behaviour 27
+Represented by Score Matrix:
+[[ -2.8367336   9.118936 ]
+ [  8.881064  -15.163266 ]]
+
+Behaviour 28
+Represented by Score Matrix:
+[[ -2.9625719  10.244774 ]
+ [  7.755226  -15.037428 ]]
+
+Behaviour 29
+Represented by Score Matrix:
+[[ -3.4982808  11.780483 ]
+ [  6.219517  -14.501719 ]]
+
+Behaviour 30
+Represented by Score Matrix:
+[[-13.767827    3.232173 ]
+ [ 13.767827   -3.2321732]]
+
+Behaviour 31
+Represented by Score Matrix:
+[[-9.679841   1.1441877]
+ [15.855812  -7.3201585]]
+
+Behaviour 32
+Represented by Score Matrix:
+[[ -6.7857366   1.2500827]
+ [ 15.749917  -10.214264 ]]
+
+Behaviour 33
+Represented by Score Matrix:
+[[ -6.0131493   1.4774953]
+ [ 15.522505  -10.986851 ]]
+
+Behaviour 34
+Represented by Score Matrix:
+[[ -5.30549     1.7698362]
+ [ 15.230164  -11.69451  ]]
+
+Behaviour 35
+Represented by Score Matrix:
+[[ -4.0562587   2.520605 ]
+ [ 14.479395  -12.943741 ]]
+
+Behaviour 36
+Represented by Score Matrix:
+[[ -3.5068128   2.971159 ]
+ [ 14.028841  -13.493187 ]]
+
+Behaviour 37
+Represented by Score Matrix:
+[[ -2.5511303   4.0154767]
+ [ 12.984524  -14.44887  ]]
+
+Behaviour 38
+Represented by Score Matrix:
+[[ -2.146133    4.6104794]
+ [ 12.389521  -14.853868 ]]
+
+Behaviour 39
+Represented by Score Matrix:
+[[ -1.7929323   5.2572784]
+ [ 11.742722  -15.2070675]]
+
+Behaviour 40
+Represented by Score Matrix:
+[[ -1.4963069   5.9606533]
+ [ 11.039347  -15.503694 ]]
+
+Behaviour 41
+Represented by Score Matrix:
+[[ -1.2639141   6.7282605]
+ [ 10.27174   -15.736086 ]]
+
+Behaviour 42
+Represented by Score Matrix:
+[[ -1.1081326   7.572479 ]
+ [  9.427521  -15.891868 ]]
+
+Behaviour 43
+Represented by Score Matrix:
+[[ -1.050182   8.514528]
+ [  8.485472 -15.949818]]
+
+Behaviour 44
+Represented by Score Matrix:
+[[ -1.131155    9.595501 ]
+ [  7.4044986 -15.868845 ]]
+
+Behaviour 45
+Represented by Score Matrix:
+[[ -1.4534074  10.917753 ]
+ [  6.0822463 -15.546593 ]]
+
+Behaviour 46
+Represented by Score Matrix:
+[[ -2.6559737  13.12032  ]
+ [  3.8796802 -14.344027 ]]
+
+Behaviour 47
+Represented by Score Matrix:
+[[-14.   2.]
+ [ 14.  -2.]]
+
+Behaviour 48
+Represented by Score Matrix:
+[[-7.527864   -0.47213596]
+ [16.472136   -8.472136  ]]
+
+Behaviour 49
+Represented by Score Matrix:
+[[-6.6266026  -0.37339717]
+ [16.373398   -9.373397  ]]
+
+Behaviour 50
+Represented by Score Matrix:
+[[ -5.803848    -0.19615242]
+ [ 16.196152   -10.196153  ]]
+
+Behaviour 51
+Represented by Score Matrix:
+[[ -4.343146     0.34314576]
+ [ 15.656855   -11.656855  ]]
+
+Behaviour 52
+Represented by Score Matrix:
+[[ -3.690525   0.690525]
+ [ 15.309475 -12.309475]]
+
+Behaviour 53
+Represented by Score Matrix:
+[[ -2.5208697   1.5208696]
+ [ 14.479131  -13.479131 ]]
+
+Behaviour 54
+Represented by Score Matrix:
+[[ -2.   2.]
+ [ 14. -14.]]
+
+Behaviour 55
+Represented by Score Matrix:
+[[ -1.0839202   3.0839202]
+ [ 12.9160795 -14.9160795]]
+
+Behaviour 56
+Represented by Score Matrix:
+[[ -0.690525   3.690525]
+ [ 12.309475 -15.309475]]
+
+Behaviour 57
+Represented by Score Matrix:
+[[ -0.04564394   5.045644  ]
+ [ 10.954356   -15.954356  ]]
+
+Behaviour 58
+Represented by Score Matrix:
+[[  0.19615242   5.803848  ]
+ [ 10.196153   -16.196152  ]]
+
+Behaviour 59
+Represented by Score Matrix:
+[[  0.37339717   6.6266026 ]
+ [  9.373397   -16.373398  ]]
+
+Behaviour 60
+Represented by Score Matrix:
+[[  0.46862698   8.531373  ]
+ [  7.468627   -16.468626  ]]
+
+Behaviour 61
+Represented by Score Matrix:
+[[ -2.  14.]
+ [  2. -14.]]
+
+Behaviour 62
+Represented by Score Matrix:
+[[-14.114378    0.8856217]
+ [ 14.114378   -0.8856217]]
+
+Behaviour 63
+Represented by Score Matrix:
+[[ -2.7000363   -0.52872026]
+ [ 15.52872    -12.299964  ]]
+
+Behaviour 64
+Represented by Score Matrix:
+[[ -1.5285952   0.2998386]
+ [ 14.700161  -13.471405 ]]
+
+Behaviour 65
+Represented by Score Matrix:
+[[  0.3532374   2.418006 ]
+ [ 12.581994  -15.353237 ]]
+
+Behaviour 66
+Represented by Score Matrix:
+[[  1.3373599   4.4338837]
+ [ 10.566116  -16.33736  ]]
+
+Behaviour 67
+Represented by Score Matrix:
+[[  1.5678365   5.203407 ]
+ [  9.796593  -16.567837 ]]
+
+Behaviour 68
+Represented by Score Matrix:
+[[  1.8370177   6.9342256]
+ [  8.065774  -16.837017 ]]
+
+Behaviour 69
+Represented by Score Matrix:
+[[  1.4038094  10.3674345]
+ [  4.632566  -16.403809 ]]
+
+Behaviour 70
+Represented by Score Matrix:
+[[  2.0992792   2.617864 ]
+ [ 11.382136  -16.09928  ]]
+
+Behaviour 71
+Represented by Score Matrix:
+[[  2.8678498   4.849293 ]
+ [  9.150706  -16.86785  ]]
+
+Behaviour 72
+Represented by Score Matrix:
+[[-3.406455  -3.7922292]
+ [16.792229  -9.593545 ]]
+
+Behaviour 73
+Represented by Score Matrix:
+[[ -1.295729  -2.902955]
+ [ 15.902955 -11.704271]]
+
+Behaviour 74
+Represented by Score Matrix:
+[[ -0.07993738  -2.1187468 ]
+ [ 15.118747   -12.920063  ]]
+
+Behaviour 75
+Represented by Score Matrix:
+[[  0.4763288  -1.675013 ]
+ [ 14.675013  -13.476329 ]]
+
+Behaviour 76
+Represented by Score Matrix:
+[[  1.4894308   -0.68811494]
+ [ 13.688115   -14.48943   ]]
+
+Behaviour 77
+Represented by Score Matrix:
+[[  1.9464393   -0.14512336]
+ [ 13.1451235  -14.946439  ]]
+
+Behaviour 78
+Represented by Score Matrix:
+[[  2.758477    1.0428389]
+ [ 11.957161  -15.758477 ]]
+
+Behaviour 79
+Represented by Score Matrix:
+[[  3.110848    1.6904678]
+ [ 11.309532  -16.110847 ]]
+
+Behaviour 80
+Represented by Score Matrix:
+[[ -0.90065795  -4.099342  ]
+ [ 16.099342   -11.099342  ]]
+
+Behaviour 81
+Represented by Score Matrix:
+[[ -0.2540333  -3.7459667]
+ [ 15.745967  -11.745967 ]]
+
+Behaviour 82
+Represented by Score Matrix:
+[[  0.35811684  -3.3581169 ]
+ [ 15.358117   -12.358117  ]]
+
+Behaviour 83
+Represented by Score Matrix:
+[[  0.93725395  -2.937254  ]
+ [ 14.937254   -12.937254  ]]
+
+Behaviour 84
+Represented by Score Matrix:
+[[  1.4843597  -2.4843597]
+ [ 14.48436   -13.48436  ]]
+
+Behaviour 85
+Represented by Score Matrix:
+[[  2.  -2.]
+ [ 14. -14.]]
+
+Behaviour 86
+Represented by Score Matrix:
+[[  2.4843597  -1.4843597]
+ [ 13.48436   -14.48436  ]]
+
+Behaviour 87
+Represented by Score Matrix:
+[[  3.7459667   0.2540333]
+ [ 11.745967  -15.745967 ]]
+
+Behaviour 88
+Represented by Score Matrix:
+[[  4.6937475   2.3062527]
+ [  9.6937475 -16.693747 ]]
+
+Behaviour 89
+Represented by Score Matrix:
+[[ -0.50192606  -5.201367  ]
+ [ 16.201366   -10.498074  ]]
+
+Behaviour 90
+Represented by Score Matrix:
+[[  0.16207659  -4.86537   ]
+ [ 15.86537    -11.162077  ]]
+
+Behaviour 91
+Represented by Score Matrix:
+[[  0.79214895  -4.495442  ]
+ [ 15.495442   -11.792149  ]]
+
+Behaviour 92
+Represented by Score Matrix:
+[[  1.3898977  -4.0931907]
+ [ 15.093191  -12.389897 ]]
+
+Behaviour 93
+Represented by Score Matrix:
+[[  1.9564638  -3.659757 ]
+ [ 14.659757  -12.956464 ]]
+
+Behaviour 94
+Represented by Score Matrix:
+[[  2.4925938  -3.1958869]
+ [ 14.195887  -13.492594 ]]
+
+Behaviour 95
+Represented by Score Matrix:
+[[  2.9986823  -2.7019753]
+ [ 13.701976  -13.998682 ]]
+
+Behaviour 96
+Represented by Score Matrix:
+[[  3.4747956  -2.1780887]
+ [ 13.178088  -14.474795 ]]
+
+Behaviour 97
+Represented by Score Matrix:
+[[  3.9206738  -1.6239669]
+ [ 12.623967  -14.920673 ]]
+
+Behaviour 98
+Represented by Score Matrix:
+[[  4.3357177  -1.0390106]
+ [ 12.039011  -15.335717 ]]
+
+Behaviour 99
+Represented by Score Matrix:
+[[  4.718953    -0.42224613]
+ [ 11.422246   -15.718953  ]]
+
+Behaviour 100
+Represented by Score Matrix:
+[[  5.0689735    0.22773328]
+ [ 10.772266   -16.068974  ]]
+
+Behaviour 101
+Represented by Score Matrix:
+[[  5.3838477    0.91285926]
+ [ 10.087141   -16.383848  ]]
+
+Behaviour 102
+Represented by Score Matrix:
+[[  5.6609774   1.6357296]
+ [  9.36427   -16.660976 ]]
+
+Behaviour 103
+Represented by Score Matrix:
+[[  5.896882   2.399825]
+ [  8.600175 -16.896881]]
+
+Behaviour 104
+Represented by Score Matrix:
+[[-0.09720285 -6.223305  ]
+ [16.223305   -9.902797  ]]
+
+Behaviour 105
+Represented by Score Matrix:
+[[  0.58129    -5.9017982]
+ [ 15.901798  -10.58129  ]]
+
+Behaviour 106
+Represented by Score Matrix:
+[[  1.2262412  -5.546749 ]
+ [ 15.546749  -11.226241 ]]
+
+Behaviour 107
+Represented by Score Matrix:
+[[  1.8393669  -5.159875 ]
+ [ 15.159875  -11.839367 ]]
+
+Behaviour 108
+Represented by Score Matrix:
+[[  2.4219258  -4.742434 ]
+ [ 14.742434  -12.421926 ]]
+
+Behaviour 109
+Represented by Score Matrix:
+[[  2.9747946  -4.295303 ]
+ [ 14.295302  -12.974794 ]]
+
+Behaviour 110
+Represented by Score Matrix:
+[[  3.4985173  -3.8190253]
+ [ 13.819025  -13.498517 ]]
+
+Behaviour 111
+Represented by Score Matrix:
+[[  3.9933333  -3.3138413]
+ [ 13.313841  -13.993333 ]]
+
+Behaviour 112
+Represented by Score Matrix:
+[[  4.459191   -2.7796986]
+ [ 12.779698  -14.45919  ]]
+
+Behaviour 113
+Represented by Score Matrix:
+[[  4.895743  -2.216251]
+ [ 12.21625  -14.895742]]
+
+Behaviour 114
+Represented by Score Matrix:
+[[  5.3023305  -1.6228385]
+ [ 11.622838  -15.30233  ]]
+
+Behaviour 115
+Represented by Score Matrix:
+[[  5.6779466   -0.99845463]
+ [ 10.998455   -15.677946  ]]
+
+Behaviour 116
+Represented by Score Matrix:
+[[  6.0211787   -0.34168684]
+ [ 10.341687   -16.02118   ]]
+
+Behaviour 117
+Represented by Score Matrix:
+[[ 0.3149034 -7.1754746]
+ [16.175474  -9.314903 ]]
+
+Behaviour 118
+Represented by Score Matrix:
+[[  1.0055562  -6.8661275]
+ [ 15.866127  -10.005556 ]]
+
+Behaviour 119
+Represented by Score Matrix:
+[[  1.6629509  -6.523522 ]
+ [ 15.523522  -10.6629505]]
+
+Behaviour 120
+Represented by Score Matrix:
+[[  2.2888887  -6.14946  ]
+ [ 15.14946   -11.288889 ]]
+
+Behaviour 121
+Represented by Score Matrix:
+[[  2.8847177  -5.745289 ]
+ [ 14.745289  -11.884718 ]]
+
+Behaviour 122
+Represented by Score Matrix:
+[[  3.451413  -5.311984]
+ [ 14.311984 -12.451413]]
+
+Behaviour 123
+Represented by Score Matrix:
+[[  4.4997277  -4.360299 ]
+ [ 13.360299  -13.499728 ]]
+
+Behaviour 124
+Represented by Score Matrix:
+[[  4.9818087  -3.8423798]
+ [ 12.84238   -13.981809 ]]
+
+Behaviour 125
+Represented by Score Matrix:
+[[  5.86096   -2.721531]
+ [ 11.721531 -14.86096 ]]
+
+Behaviour 126
+Represented by Score Matrix:
+[[  6.2568474  -2.1174188]
+ [ 11.117418  -15.256847 ]]
+
+Behaviour 127
+Represented by Score Matrix:
+[[  6.622291   -1.4828622]
+ [ 10.482862  -15.622292 ]]
+
+Behaviour 128
+Represented by Score Matrix:
+[[  6.9558253  -0.8163963]
+ [  9.816397  -15.955825 ]]
+
+Behaviour 129
+Represented by Score Matrix:
+[[  2.1039402  -7.434243 ]
+ [ 15.434243  -10.10394  ]]
+
+Behaviour 130
+Represented by Score Matrix:
+[[  2.740584   -7.0708866]
+ [ 15.070887  -10.740583 ]]
+
+Behaviour 131
+Represented by Score Matrix:
+[[  3.347466   -6.6777687]
+ [ 14.677769  -11.3474655]]
+
+Behaviour 132
+Represented by Score Matrix:
+[[  3.9256363  -6.255939 ]
+ [ 14.2559395 -11.925636 ]]
+
+Behaviour 133
+Represented by Score Matrix:
+[[  4.475832   -5.8061347]
+ [ 13.806134  -12.475832 ]]
+
+Behaviour 134
+Represented by Score Matrix:
+[[  4.998512   -5.3288145]
+ [ 13.3288145 -12.998512 ]]
+
+Behaviour 135
+Represented by Score Matrix:
+[[  5.493881  -4.824184]
+ [ 12.824183 -13.493881]]
+
+Behaviour 136
+Represented by Score Matrix:
+[[  5.961898   -4.2922006]
+ [ 12.292201  -13.961898 ]]
+
+Behaviour 137
+Represented by Score Matrix:
+[[  6.4022727  -3.7325754]
+ [ 11.732575  -14.402272 ]]
+
+Behaviour 138
+Represented by Score Matrix:
+[[  6.814455   -3.1447577]
+ [ 11.144758  -14.814455 ]]
+
+Behaviour 139
+Represented by Score Matrix:
+[[  7.1976066  -2.5279095]
+ [ 10.527909  -15.197607 ]]
+
+Behaviour 140
+Represented by Score Matrix:
+[[  7.5505605  -1.8808633]
+ [  9.880863  -15.550561 ]]
+
+Behaviour 141
+Represented by Score Matrix:
+[[  3.1958885  -7.9308825]
+ [ 14.930882  -10.1958885]]
+
+Behaviour 142
+Represented by Score Matrix:
+[[  3.8119614  -7.546955 ]
+ [ 14.546955  -10.811961 ]]
+
+Behaviour 143
+Represented by Score Matrix:
+[[  4.3996468  -7.1346407]
+ [ 14.134641  -11.399647 ]]
+
+Behaviour 144
+Represented by Score Matrix:
+[[  4.9597454  -6.6947393]
+ [ 13.694739  -11.959745 ]]
+
+Behaviour 145
+Represented by Score Matrix:
+[[  5.492789   -6.2277827]
+ [ 13.227782  -12.492788 ]]
+
+Behaviour 146
+Represented by Score Matrix:
+[[  5.999063  -5.734057]
+ [ 12.734056 -12.999063]]
+
+Behaviour 147
+Represented by Score Matrix:
+[[  6.478622  -5.213616]
+ [ 12.213616 -13.478622]]
+
+Behaviour 148
+Represented by Score Matrix:
+[[  6.9312897  -4.666284 ]
+ [ 11.666284  -13.93129  ]]
+
+Behaviour 149
+Represented by Score Matrix:
+[[  7.3566527  -4.0916467]
+ [ 11.091646  -14.356652 ]]
+
+Behaviour 150
+Represented by Score Matrix:
+[[  7.75404    -3.4890337]
+ [ 10.489034  -14.75404  ]]
+
+Behaviour 151
+Represented by Score Matrix:
+[[  8.122494   -2.8574874]
+ [  9.857488  -15.122494 ]]
+
+Behaviour 152
+Represented by Score Matrix:
+[[ 3.6557963 -8.73458  ]
+ [14.73458   -9.655796 ]]
+
+Behaviour 153
+Represented by Score Matrix:
+[[  4.2794533  -8.358237 ]
+ [ 14.358237  -10.279453 ]]
+
+Behaviour 154
+Represented by Score Matrix:
+[[  5.443206  -7.52199 ]
+ [ 13.52199  -11.443206]]
+
+Behaviour 155
+Represented by Score Matrix:
+[[  5.9847383  -7.0635223]
+ [ 13.063522  -11.984738 ]]
+
+Behaviour 156
+Represented by Score Matrix:
+[[  6.9888735  -6.0676575]
+ [ 12.067657  -12.9888735]]
+
+Behaviour 157
+Represented by Score Matrix:
+[[  7.4515104  -5.5302944]
+ [ 11.530294  -13.45151  ]]
+
+Behaviour 158
+Represented by Score Matrix:
+[[  7.8875175  -4.9663014]
+ [ 10.966302  -13.887518 ]]
+
+Behaviour 159
+Represented by Score Matrix:
+[[ 4.121004 -9.485921]
+ [14.485921 -9.121004]]
+
+Behaviour 160
+Represented by Score Matrix:
+[[ 4.7508273 -9.115744 ]
+ [14.115744  -9.750827 ]]
+
+Behaviour 161
+Represented by Score Matrix:
+[[  5.3527045  -8.717622 ]
+ [ 13.717622  -10.352705 ]]
+
+Behaviour 162
+Represented by Score Matrix:
+[[  5.9275255  -8.292442 ]
+ [ 13.292442  -10.9275255]]
+
+Behaviour 163
+Represented by Score Matrix:
+[[  6.475919   -7.8408356]
+ [ 12.840836  -11.475919 ]]
+
+Behaviour 164
+Represented by Score Matrix:
+[[  6.9982805  -7.3631973]
+ [ 12.363197  -11.998281 ]]
+
+Behaviour 165
+Represented by Score Matrix:
+[[  7.4947915  -6.8597083]
+ [ 11.859709  -12.494792 ]]
+
+Behaviour 166
+Represented by Score Matrix:
+[[  8.409939   -5.7748556]
+ [ 10.774856  -13.409939 ]]
+
+Behaviour 167
+Represented by Score Matrix:
+[[  8.82788   -5.192797]
+ [ 10.192797 -13.82788 ]]
+
+Behaviour 168
+Represented by Score Matrix:
+[[  4.5920053 -10.187923 ]
+ [ 14.187923   -8.592005 ]]
+
+Behaviour 169
+Represented by Score Matrix:
+[[ 5.8336215 -9.42954  ]
+ [13.42954   -9.833622 ]]
+
+Behaviour 170
+Represented by Score Matrix:
+[[  6.4136477  -9.009565 ]
+ [ 13.009565  -10.413648 ]]
+
+Behaviour 171
+Represented by Score Matrix:
+[[  6.9674525  -8.563371 ]
+ [ 12.563371  -10.967452 ]]
+
+Behaviour 172
+Represented by Score Matrix:
+[[  7.4954686  -8.091387 ]
+ [ 12.091387  -11.495468 ]]
+
+Behaviour 173
+Represented by Score Matrix:
+[[  7.9979167  -7.5938344]
+ [ 11.593835  -11.997916 ]]
+
+Behaviour 174
+Represented by Score Matrix:
+[[  8.474816   -7.0707345]
+ [ 11.070734  -12.474816 ]]
+
+Behaviour 175
+Represented by Score Matrix:
+[[  8.925985   -6.5219035]
+ [ 10.521903  -12.925985 ]]
+
+Behaviour 176
+Represented by Score Matrix:
+[[  5.70756  -10.48128 ]
+ [ 13.48128   -8.707561]]
+
+Behaviour 177
+Represented by Score Matrix:
+[[  6.3182807 -10.092001 ]
+ [ 13.092001   -9.318281 ]]
+
+Behaviour 178
+Represented by Score Matrix:
+[[ 6.9022474 -9.675967 ]
+ [12.675967  -9.902247 ]]
+
+Behaviour 179
+Represented by Score Matrix:
+[[  7.4601436  -9.233864 ]
+ [ 12.233864  -10.460144 ]]
+
+Behaviour 180
+Represented by Score Matrix:
+[[  7.9924283  -8.766149 ]
+ [ 11.766149  -10.992429 ]]
+
+Behaviour 181
+Represented by Score Matrix:
+[[  8.499352  -8.273072]
+ [ 11.273072 -11.499352]]
+
+Behaviour 182
+Represented by Score Matrix:
+[[  8.980969   -7.7546897]
+ [ 10.754689  -11.980969 ]]
+
+Behaviour 183
+Represented by Score Matrix:
+[[  4.8827763 -11.782525 ]
+ [ 13.782525   -6.8827763]]
+
+Behaviour 184
+Represented by Score Matrix:
+[[  6.193679 -11.093428]
+ [ 13.093428  -8.193679]]
+
+Behaviour 185
+Represented by Score Matrix:
+[[  6.807071  -10.7068205]
+ [ 12.7068205  -8.807072 ]]
+
+Behaviour 186
+Represented by Score Matrix:
+[[  7.393797 -10.293546]
+ [ 12.293546  -9.393797]]
+
+Behaviour 187
+Represented by Score Matrix:
+[[ 7.954556  -9.854304 ]
+ [11.854304  -9.9545555]]
+
+Behaviour 188
+Represented by Score Matrix:
+[[  8.489824  -9.389573]
+ [ 11.389573 -10.489824]]
+
+Behaviour 189
+Represented by Score Matrix:
+[[  8.999874  -8.899623]
+ [ 10.899623 -10.999874]]
+
+Behaviour 190
+Represented by Score Matrix:
+[[  9.48478   -8.384529]
+ [ 10.384529 -11.48478 ]]
+
+Behaviour 191
+Represented by Score Matrix:
+[[  6.042717 -12.017701]
+ [ 13.017701  -7.042717]]
+
+Behaviour 192
+Represented by Score Matrix:
+[[  6.6852727 -11.660257 ]
+ [ 12.660257   -7.6852727]]
+
+Behaviour 193
+Represented by Score Matrix:
+[[  7.300249 -11.275233]
+ [ 12.275233  -8.300249]]
+
+Behaviour 194
+Represented by Score Matrix:
+[[  7.8886085 -10.863593 ]
+ [ 11.863593   -8.888609 ]]
+
+Behaviour 195
+Represented by Score Matrix:
+[[  8.451062 -10.426046]
+ [ 11.426046  -9.451062]]
+
+Behaviour 196
+Represented by Score Matrix:
+[[ 8.988095 -9.96308 ]
+ [10.96308  -9.988095]]
+
+Behaviour 197
+Represented by Score Matrix:
+[[  7.6852727 -12.660257 ]
+ [ 11.660257   -6.6852727]]
+
+Behaviour 198
+Represented by Score Matrix:
+[[  8.888609  -11.863593 ]
+ [ 10.863593   -7.8886085]]
+
+Behaviour 199
+Represented by Score Matrix:
+[[  9.451062 -11.426046]
+ [ 10.426046  -8.451062]]
+
+Behaviour 200
+Represented by Score Matrix:
+[[  6.8827763 -13.782525 ]
+ [ 11.782525   -4.8827763]]
+
+Behaviour 201
+Represented by Score Matrix:
+[[  7.5526643 -13.452413 ]
+ [ 11.452413   -5.5526643]]
+
+Behaviour 202
+Represented by Score Matrix:
+[[  8.193679 -13.093428]
+ [ 11.093428  -6.193679]]
+
+Behaviour 203
+Represented by Score Matrix:
+[[  8.807072  -12.7068205]
+ [ 10.7068205  -6.807071 ]]
+
+Behaviour 204
+Represented by Score Matrix:
+[[  9.393797 -12.293546]
+ [ 10.293546  -7.393797]]
+
+Behaviour 205
+Represented by Score Matrix:
+[[  9.9545555 -11.854304 ]
+ [  9.854304   -7.954556 ]]
+
+Behaviour 206
+Represented by Score Matrix:
+[[  6.7039223 -14.477642 ]
+ [ 11.477642   -3.7039223]]
+
+Behaviour 207
+Represented by Score Matrix:
+[[  7.4017987 -14.175519 ]
+ [ 11.175519   -4.4017987]]
+
+Behaviour 208
+Represented by Score Matrix:
+[[  8.069145  -13.842865 ]
+ [ 10.842865   -5.0691457]]
+
+Behaviour 209
+Represented by Score Matrix:
+[[  8.707561 -13.48128 ]
+ [ 10.48128   -5.70756 ]]
+
+Behaviour 210
+Represented by Score Matrix:
+[[  9.318281  -13.092001 ]
+ [ 10.092001   -6.3182807]]
+
+Behaviour 211
+Represented by Score Matrix:
+[[  9.902247  -12.675967 ]
+ [  9.675967   -6.9022474]]
+
+Behaviour 212
+Represented by Score Matrix:
+[[  7.928279 -14.524197]
+ [ 10.524197  -3.928279]]
+
+Behaviour 213
+Represented by Score Matrix:
+[[  8.592005  -14.187923 ]
+ [ 10.187923   -4.5920053]]
+
+Behaviour 214
+Represented by Score Matrix:
+[[  9.226713  -13.822632 ]
+ [  9.822632   -5.2267137]]
+
+Behaviour 215
+Represented by Score Matrix:
+[[  9.833622  -13.42954  ]
+ [  9.42954    -5.8336215]]
+
+Behaviour 216
+Represented by Score Matrix:
+[[  7.772401  -15.137318 ]
+ [ 10.137318   -2.7724006]]
+
+Behaviour 217
+Represented by Score Matrix:
+[[  8.462046 -14.826962]
+ [  9.826962  -3.462046]]
+
+Behaviour 218
+Represented by Score Matrix:
+[[  9.121004 -14.485921]
+ [  9.485921  -4.121004]]
+
+Behaviour 219
+Represented by Score Matrix:
+[[  7.4195395  -16.154533  ]
+ [  9.154533    -0.41953927]]
+
+Behaviour 220
+Represented by Score Matrix:
+[[  8.164353  -15.899347 ]
+ [  8.899347   -1.1643531]]
+
+Behaviour 221
+Represented by Score Matrix:
+[[ 7.9988866e+00 -1.6329189e+01]
+ [ 8.3291893e+00  1.1135471e-03]]
+
+Behaviour 222
+Represented by Score Matrix:
+[[  9.436117  -15.766419 ]
+ [  7.76642    -1.4361169]]
+
+Behaviour 223
+Represented by Score Matrix:
+[[  7.015672  -16.876244 ]
+ [  7.876243    1.9843279]]
+
+Behaviour 224
+Represented by Score Matrix:
+[[  8.58862    -16.449192  ]
+ [  7.4491916    0.41137943]]
+
+Behaviour 225
+Represented by Score Matrix:
+[[  9.314903  -16.175474 ]
+ [  7.1754746  -0.3149034]]
+
+Behaviour 226
+Represented by Score Matrix:
+[[ 10.005556  -15.866127 ]
+ [  6.8661275  -1.0055562]]
+
+Behaviour 227
+Represented by Score Matrix:
+[[  6.7947283 -17.115236 ]
+ [  7.1152363   3.2052717]]
+
+Behaviour 228
+Represented by Score Matrix:
+[[  7.6392    -16.95971  ]
+ [  6.959708    2.3607998]]
+
+Behaviour 229
+Represented by Score Matrix:
+[[  8.435289  -16.755798 ]
+ [  6.755798    1.5647101]]
+
+Behaviour 230
+Represented by Score Matrix:
+[[  9.902797   -16.223305  ]
+ [  6.223305     0.09720285]]
+
+Behaviour 231
+Represented by Score Matrix:
+[[  9.058806  -16.7621   ]
+ [  5.7620997   1.9411932]]
+
+Behaviour 232
+Represented by Score Matrix:
+[[ 10.498074   -16.201366  ]
+ [  5.201367     0.50192606]]
+
+Behaviour 233
+Represented by Score Matrix:
+[[ 10.416199  -16.416199 ]
+ [  4.4161983   1.5838015]]
+
+Behaviour 234
+Represented by Score Matrix:
+[[  6.814953  -17.097809 ]
+ [  3.0978096   7.185047 ]]
+
+Behaviour 235
+Represented by Score Matrix:
+[[  7.786015  -17.068872 ]
+ [  3.0688717   6.213985 ]]
+
+Behaviour 236
+Represented by Score Matrix:
+[[  9.501861  -16.784718 ]
+ [  2.7847173   4.4981394]]
+
+Behaviour 237
+Represented by Score Matrix:
+[[  7.6245575 -16.853313 ]
+ [  1.8533142   7.3754425]]
+
+Behaviour 238
+Represented by Score Matrix:
+[[  8.564608  -16.793364 ]
+ [  1.7933638   6.435393 ]]
+
+Behaviour 239
+Represented by Score Matrix:
+[[ 10.220915  -16.44967  ]
+ [  1.4496716   4.779085 ]]
+
+Behaviour 240
+Represented by Score Matrix:
+[[ 10.961395  -16.190151 ]
+ [  1.190152    4.0386047]]
+
+Behaviour 241
+Represented by Score Matrix:
+[[  8.472136   -16.472136  ]
+ [  0.47213596   7.527864  ]]
+
+Behaviour 242
+Represented by Score Matrix:
+[[  9.373397   -16.373398  ]
+ [  0.37339717   6.6266026 ]]
+
+Behaviour 243
+Represented by Score Matrix:
+[[ 10.196153   -16.196152  ]
+ [  0.19615242   5.803848  ]]
+
+Behaviour 244
+Represented by Score Matrix:
+[[ 10.954356   -15.954356  ]
+ [ -0.04564394   5.045644  ]]
+
+Behaviour 245
+Represented by Score Matrix:
+[[  9.363917  -15.89957  ]
+ [ -1.1004293   7.636083 ]]
+
+Behaviour 246
+Represented by Score Matrix:
+[[ 10.214264  -15.749917 ]
+ [ -1.2500827   6.7857366]]
+
+Behaviour 247
+Represented by Score Matrix:
+[[ 10.986851  -15.522505 ]
+ [ -1.4774953   6.0131493]]
+
+Behaviour 248
+Represented by Score Matrix:
+[[  8.419193  -15.1369915]
+ [ -2.8630085   9.580807 ]]
+
+Behaviour 249
+Represented by Score Matrix:
+[[  9.431496  -15.149294 ]
+ [ -2.8507063   8.568504 ]]
+
+Behaviour 250
+Represented by Score Matrix:
+[[ 10.3065605 -15.024359 ]
+ [ -2.9756413   7.693439 ]]
+
+Behaviour 251
+Represented by Score Matrix:
+[[ 11.083752  -14.80155  ]
+ [ -3.1984503   6.9162483]]
+
+Behaviour 252
+Represented by Score Matrix:
+[[  9.667697 -13.912695]
+ [ -5.087305   9.332303]]
+
+Behaviour 253
+Represented by Score Matrix:
+[[ 10.545364 -13.790362]
+ [ -5.209637   8.454636]]
+

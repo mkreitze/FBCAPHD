@@ -235,6 +235,7 @@ def detectBehaviours(startX, radiusOfProjection, granularity, states, gens, file
                             break
                     if not isIn:
                         detectedBehaviours.append((scoreMatrix, finalFBCA))
+    print(f"From {-startX} to {startX} and {yMin} to {yMax} with granularity {granularity}, we found {len(detectedBehaviours)} behaviours")
     record.write(f"Total behaviours detected: {len(detectedBehaviours)}\n")
     idx = 0
     for behaviour in detectedBehaviours:
