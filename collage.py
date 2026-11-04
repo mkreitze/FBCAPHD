@@ -4,8 +4,11 @@ import math
 import re
 
 # Find all images
-stringOfImport = "mooreGranP1behaviour" 
+stringOfImport = "mooreGran1behaviour" 
 files = glob.glob(f"{stringOfImport}*.png")
+# Add in borders
+border_size = 10
+
 
 # Sort by the number in the filename
 def get_num(filename):
@@ -31,14 +34,17 @@ rows = math.ceil(n / cols)
 # Create output image
 montage = Image.new(
     "RGB",
-    (cols * width, rows * height),
+    (
+        cols * width + (cols + 1) * border_size,
+        rows * height + (rows + 1) * border_size
+    ),
     color=(255, 0, 0)  # Red
 )
 
 # Paste images
 for i, img in enumerate(images):
-    x = (i % cols) * width
-    y = (i // cols) * height
+    x = (i % cols) * width + (i % cols + 1) * border_size
+    y = (i // cols) * height + (i // cols + 1) * border_size
     montage.paste(img, (x, y))
 
 # Save result

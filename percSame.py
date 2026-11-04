@@ -5,7 +5,7 @@ import re
 import math
 import matplotlib.pyplot as plt
 
-desiredString = "smA"
+desiredString = "mooreGran1behaviour"
 # loads png, looks through colours, outputs binary matrix
 def png_to_binary_matrix(filename):
     # Load image as grayscale
@@ -53,7 +53,7 @@ def makePic(similarity_matrix, rows, cols,index):
     ax.grid(which="minor", color="black", linewidth=1)
     ax.tick_params(which="minor", bottom=False, left=False)
 
-    ax.set_title("Matrix Similarity")
+    ax.set_title("Precent Similarity")
 
     plt.savefig(f"simlarity{index}.png")
 
