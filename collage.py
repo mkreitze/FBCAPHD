@@ -4,7 +4,7 @@ import math
 import re
 
 # Find all images
-stringOfImport = "smA" 
+stringOfImport = "Shared Counts_" 
 files = glob.glob(f"{stringOfImport}*.png")
 # sorts numerically. None is a problem because grep
 for f in files:

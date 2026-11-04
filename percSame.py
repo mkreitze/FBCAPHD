@@ -71,7 +71,7 @@ def getFiles(desiredString = "behaviour"):
     dimImage = len(files)
     cols = math.ceil(math.sqrt(dimImage))
     rows = math.ceil(dimImage / cols)
-    A = np.zeros((rows, cols), dtype=np.uint8)
+    A = np.zeros((rows, cols), dtype=np.uint64)
     return(files, A, rows, cols)
 
 

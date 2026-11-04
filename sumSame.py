@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 desiredString = "smA"  # Change this to the desired filename
 files, A, rows, cols = percSame.getFiles(desiredString) # solves the problem of numbering being annoying
 
-sums=np.copy(A)
+sums= np.zeros((rows, cols), dtype=np.int64)
 idx= 0
 for i,file in enumerate(files): # will have to hardcode for more numbers
     matrix = percSame.png_to_binary_matrix(file)  # load a numpy matrix from png
