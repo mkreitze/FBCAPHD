@@ -20,7 +20,7 @@ def png_to_binary_matrix(filename):
 
     return matrix
 
-def makePic(similarity_matrix, rows, cols,index):
+def makePic(similarity_matrix, rows, cols,index="", title="Similarity"):
     fig, ax = plt.subplots()
 
     im = ax.imshow(
@@ -30,7 +30,7 @@ def makePic(similarity_matrix, rows, cols,index):
         vmax=100
     )
 
-    plt.colorbar(im, ax=ax, label="Similarity (%)")
+    plt.colorbar(im, ax=ax, label=title)
 
     for row in range(rows):
         for col in range(cols):
@@ -53,9 +53,9 @@ def makePic(similarity_matrix, rows, cols,index):
     ax.grid(which="minor", color="black", linewidth=1)
     ax.tick_params(which="minor", bottom=False, left=False)
 
-    ax.set_title("Precent Similarity")
+    ax.set_title(title)
 
-    plt.savefig(f"simlarity{index}.png")
+    plt.savefig(f"{title}_{index}.png")
 
 def getFiles(desiredString = "behaviour"):
 

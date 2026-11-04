@@ -4,8 +4,16 @@ import math
 import re
 
 # Find all images
-stringOfImport = "mooreGran1behaviour" 
+stringOfImport = "smA" 
 files = glob.glob(f"{stringOfImport}*.png")
+# sorts numerically. None is a problem because grep
+for f in files:
+    if re.search(rf"{stringOfImport}(\d+)\.png", f) is None:
+        print("PROBLEM FILE:", f)
+files.sort(
+    key=lambda f: int(re.search(rf"{stringOfImport}(\d+)\.png", f).group(1))
+)
+
 # Add in borders
 border_size = 10
 
