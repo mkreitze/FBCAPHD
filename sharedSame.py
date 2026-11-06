@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from collections import defaultdict
 
-desiredString = "smA"  # Change this to the desired filename
+desiredString = "mooreGran1behaviour"  # Change this to the desired filename
 files, A, rows, cols = percSame.getFiles(desiredString) # solves the problem of numbering being annoying
 
 def hashMatrix(M,h,w): # hashes the matrix into h and w sized submatricies and counts occurance.
@@ -21,13 +21,22 @@ def hashMatrix(M,h,w): # hashes the matrix into h and w sized submatricies and c
     return counts    
 
 def sharedHashes(hashedCountedA,hashedCountedB):
-    total = 0
+    total = max(sum(hashedCountedA.values()), sum(hashedCountedB.values())) # this should technically be the same value.... 
+    normTotal = 0
+
+    # total = 0
+    # for key in hashedCountedA:
+    #     if key in hashedCountedB:
+    #         total += min(hashedCountedA[key], hashedCountedB[key])
+
 
     for key in hashedCountedA:
         if key in hashedCountedB:
-            total += min(hashedCountedA[key], hashedCountedB[key])
+            total = min(hashedCountedA[key], hashedCountedB[key])
+            normTotal += total / ( max(hashedCountedA[key], hashedCountedB[key]) )
+    
 
-    return total
+    return normTotal*100
 
 hashedMatricies = []
 for j in range(1,len(files)+1):
@@ -43,7 +52,8 @@ for j,hashed in enumerate(hashedMatricies):
         r = i // cols
         c = i % cols
         sharedCounts[r, c] = shared
-    sharedNormedCounts = (sharedCounts - sharedCounts.min()) / (sharedCounts.max() - sharedCounts.min())*100
-    percSame.makePic(sharedNormedCounts, rows, cols, index = j, title = f"Shared Counts")    
+    # sharedNormedCounts = (sharedCounts - sharedCounts.min()) / (sharedCounts.max() - sharedCounts.min())*100 # normalized through MIN shared not MIN shared PER PAIR
+    print(f"Done {j} of {len(files)+1}")
+    percSame.makePic(sharedCounts, rows, cols, index = j, title = f"Shared Counts")    
     plt.close()
   
