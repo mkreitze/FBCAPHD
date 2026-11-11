@@ -2,9 +2,10 @@ from PIL import Image
 import glob
 import math
 import re
+import sys
 
 # Find all images
-stringOfImport = "Shared Counts_" 
+stringOfImport = sys.argv[1] if len(sys.argv) > 1 else "Shared Counts_" # leaving option to allow for manual input
 files = glob.glob(f"{stringOfImport}*.png")
 # sorts numerically. None is a problem because grep
 for f in files:

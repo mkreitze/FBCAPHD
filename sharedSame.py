@@ -21,8 +21,8 @@ def hashMatrix(M,h,w): # hashes the matrix into h and w sized submatricies and c
     return counts    
 
 def sharedHashes(hashedCountedA,hashedCountedB):
-    total = max(sum(hashedCountedA.values()), sum(hashedCountedB.values())) # this should technically be the same value.... 
-    normTotal = 0
+    numOfWindows = max(sum(hashedCountedA.values()), sum(hashedCountedB.values())) # this should technically be the same value.... 
+    total = 0
 
     # total = 0
     # for key in hashedCountedA:
@@ -32,10 +32,9 @@ def sharedHashes(hashedCountedA,hashedCountedB):
 
     for key in hashedCountedA:
         if key in hashedCountedB:
-            total = min(hashedCountedA[key], hashedCountedB[key])
-            normTotal += total / ( max(hashedCountedA[key], hashedCountedB[key]) )
+            total += min(hashedCountedA[key], hashedCountedB[key])
     
-
+    normTotal = total / numOfWindows
     return normTotal*100
 
 hashedMatricies = []
